@@ -99,7 +99,7 @@ WHERE departments.name = 'Dipartimento di Matematica'
 -- @BLOCK
 -- 7. BONUS: Selezionare per ogni studente quanti tentativi d’esame ha sostenuto per superare ciascuno dei suoi esami
 
-SELECT students.id, students.name, students.surname, courses.name, COUNT(*) AS attempts
+SELECT CONCAT(students.name, ' ', students.surname) AS student, courses.name as course, COUNT(*) AS exam_attempts
 FROM students
 JOIN exam_student
 ON students.id = exam_student.student_id
